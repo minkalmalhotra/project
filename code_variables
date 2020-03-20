@@ -1,0 +1,41 @@
+/* Global Variables */
+int currentApp; // current web app page (Welcome '0', Weather 1', Youtube '2', or Calendar '3')
+char ledThreadRunning; // boolean for led thread
+short phAvg; // photoresistor running average
+char runningAvgShift = 3; // 3 to discard 3 least significant bits (unused bits)
+char terminateCode; // boolean to track when user terminates code
+string appURL = "http://localhost:8000/smartmirror.html &";
+
+string chromiumCall = "sudo -u pi chromium-browser --start-fullscreen --app=" + appURL;
+//string chromiumCall = "sudo -u $SUDO_USER chromium-browser --start-fullscreen --app=" + appURL;
+
+string goLeftCmd = "sh key.sh Left ";
+string goRightCmd = "sh key.sh Right ";
+string goCalendar = "sh key.sh c ";
+string goWeather = "sh key.sh w ";
+string goYoutube = "sh key.sh y ";
+string goMiroslav = "sh key.sh m ";
+string addStar = "sh key.sh p ";
+string clearStarsCmd = "sh key.sh r ";
+string passwordSuccess = "sh key.sh s ";
+string passwordFail = "sh key.sh f ";
+string sleepCmd = "sh key.sh z ";
+string wakeCmd = "sh key.sh o ";
+string logoutCmd = "sh key.sh l";
+string loginCmd = "sh key.sh ";
+string playOrPauseVideoCmd = "sh key.sh h";
+string rebootCmd = "reboot";
+string shutdownCmd = "shutdown";
+
+vector<string> appCommands;
+vector<string> guestAppCommands;
+
+char password[6]; // array when password entered
+int pwInd; // password current index (track password input)
+int currentUser; // current user ID ('0' -> guest, '1' -> user1, etc)
+unsigned long timePasswordInputReceived; // time stamp when password input received
+unsigned long timeButtonCenterPressed; // time stamp when center button was pressed
+unsigned long timeButtonLeftPressed; // time stamp when center button was pressed
+unsigned long timeButtonRightPressed; // time stamp when center button was pressed
+bool isAsleep;
+char blockButtonPress; // boolean to indicate when to block button presses
