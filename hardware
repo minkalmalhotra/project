@@ -13,3 +13,4 @@ Put your SD-card in the computer and write down the letter (in my case [D:\]). D
 As you can see in the "Win32"-image, I'm using Raspbian Jessie.
 When the write is successful, you just take the SD-card and put it in your Raspberry. Connect to the computer screen, add a mouse and keyboard, and start it.
 In my case, I came directly to the desktop on start. To make the right configurations you need to open the terminal and enter "sudo raspi-config". In there, you are going to do three different things. First, "expand filesystem". Second, choose "Boot Options" and then choose to boot to 
+Desctop GUI with the "pi" user. And third, choose "Internationalisation Options" and change to you own timeszone.
