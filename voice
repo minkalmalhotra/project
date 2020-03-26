@@ -8,3 +8,33 @@ int PortAudioCallback(const void* input,
                       void* user_data);
 
 class PortAudioWrapper 
+ public:
+  // Constructor.
+  PortAudioWrapper(int sample_rate, int num_channels, int bits_per_sample) {
+    num_lost_samples_ = 0;
+    min_read_samples_ = sample_rate * 0.1;
+    Init(sample_rate, num_channels, bits_per_sample);
+  }
+
+  // Reads data from ring buffer.
+  template<typename T>
+  void Read(std::vector<T>* data) {
+    assert(data != NULL);
+
+    // Checks ring buffer overflow.
+    if (num_lost_samples_ > 0) {
+      std::cerr << "Lost " << num_lost_samples_ << " samples due to ring"
+          << " buffer overflow." << std::endl;
+      num_lost_samples_ = 0;
+    }
+
+    ring_buffer_size_t num_available_samples = 0;
+    while (true) {
+      num_available_samples =
+          PaUtil_GetRingBufferReadAvailable(&pa_ringbuffer_);
+      if (num_available_samples >= min_read_samples_) {
+        break;
+      }
+      Pa_Sleep(5);
+    }
+
