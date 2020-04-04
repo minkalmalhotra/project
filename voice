@@ -1,4 +1,4 @@
-///////Voice
+Voice
 
 int PortAudioCallback(const void* input,
                       void* output,
