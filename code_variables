@@ -1,5 +1,5 @@
 /* Global Variables */
-int currentApp; // current web app page (Welcome '0', Weather 1', Youtube '2', or Calendar '3')
+int currentApp; // current web app page (Welcome '0', Weather 1', time '2', date'3')
 char ledThreadRunning; // boolean for led thread
 short phAvg; // photoresistor running average
 char runningAvgShift = 3; // 3 to discard 3 least significant bits (unused bits)
@@ -39,3 +39,4 @@ unsigned long timeButtonLeftPressed; // time stamp when center button was presse
 unsigned long timeButtonRightPressed; // time stamp when center button was pressed
 bool isAsleep;
 char blockButtonPress; // boolean to indicate when to block button presses
+ 
