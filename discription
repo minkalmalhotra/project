@@ -1,3 +1,3 @@
 Smart mirror project has been finalised, it will be able to display news, weather and date and time. we will also try to put the concept of alexa using AWS lambda. 
-workin on the hardware of the project . ordered components including raspbeery pi, acrylic mirror, a display, ,  and Sd card and card reader
-once hardware is complied. we will move to the software part and coding in C
+workin on the hardware of the project . ordered components including raspbeery pi, acrylic mirror, a display (monitor in our case) and Sd card and card reader
+once hardware is complied. we will move to the software part and coding in C ++
