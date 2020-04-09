@@ -1,16 +1,8 @@
 The two way mirror is assembled in the frame, then adding the strip of wood or cardboard for the border.
-After this mounting is done. Depending on the install location we need to reun some sort of power to the mirror.
+Monitor- on which the output will be obgtained.
+Raspberry Pi- Download Raspbian-- ( https://www.raspberrypi.org/downloads/raspbian/) 
+SD card- Insert SD card in Pi and boot.
+Username-- Pi  and Password-- raspberry
+HDMI to VGA convertor
+VGA cable
 
-Mounting
-Configure the Pi:The raspberry Pi 3b plus is configured.
-
-Setting up smart mirror to run on Boot
-Commands used to run smart mirror
-raspberry pi to be connected with screen and internet.ubuntu installed in raspberry pi using SD card.  
-Put your SD-card in the computer and write down the letter (in my case [D:\]). Download Rasbian from raspberrypi.org/downloads. When the ZIP-file is extracted you need Win32 Disk Imager. You can download it at sourceforge.net/projects/win32diskimager/. Install and start it. Klick on the folder icon and browse to the folder where you have the Raspbian files. Make sure that the destination is the SD-card (in my case D:)
-As you can see in the "Win32"-image, I'm using Raspbian Jessie.
-When the write is successful, you just take the SD-card and put it in your Raspberry. Connect to the computer screen, add a mouse and keyboard, and start it.
-In my case, I came directly to the desktop on start. To make the right configurations you need to open the terminal and enter "sudo raspi-config". In there, you are going to do three different things. First, "expand filesystem". Second, choose "Boot Options" and then choose to boot to 
-Desctop GUI with the "pi" user. And third, choose "Internationalisation Options" and change to you own timeszone.
-We usually want our mirror to be higher rather then wider, so therefore we will rotate the screen!
-Screen rotation is really simple! Just type "cd /boot" and then "sudo nano config.txt". Now, we are in a textfile. Scrolling all the way to the bottom, and then add "display_rotate=1" in a new line. This will rotate our screen 90 degrees.
