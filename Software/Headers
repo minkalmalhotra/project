@@ -9,6 +9,12 @@ class SmartMirrorFinal;
 
 class SmartMirrorFinal : public QMainWindow
 {
+   Q_OBJECT
+
+public:
+    explicit SmartMirrorFinal(QWidget *parent = 0);
+    void updateTime();
+
     ~SmartMirrorFinal();
 
 private:
