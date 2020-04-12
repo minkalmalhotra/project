@@ -1,0 +1,18 @@
+#ifndef SMARTMIRRORFINAL_H
+#define SMARTMIRRORFINAL_H
+
+#include <QMainWindow>
+
+namespace Ui {
+class SmartMirrorFinal;
+}
+
+class SmartMirrorFinal : public QMainWindow
+{
+    ~SmartMirrorFinal();
+
+private:
+    Ui::SmartMirrorFinal *ui;
+};
+
+#endif // SMARTMIRRORFINAL_H
